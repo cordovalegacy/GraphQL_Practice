@@ -1,9 +1,10 @@
 const { ApolloServer } = require("apollo-server")
+const { typeDefs } = require("./schema/typeDefs")
+const { resolvers } = require("./schema/resolvers")
 
 
-
-
-// !type defs give graphql types, and resolvers are the functions that do graphql stuff
+//type defs are like a schema
+//resolvers are like controller functions
 const server = new ApolloServer({ typeDefs, resolvers })
 
 

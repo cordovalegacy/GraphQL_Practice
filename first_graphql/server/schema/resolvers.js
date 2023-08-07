@@ -1,10 +1,25 @@
-const { UserList } = require("../utils/dummyData")
+const { UserList, MovieList } = require("../utils/dummyData")
+const _ = require("lodash")
 
 const resolvers = {
 
     Query: {
-        users: () => UserList
-        //same as users(){ return UserList }
+        users: () => UserList, //same as users(){ return UserList }
+        user: (parent, args) => {
+            const id = args.id
+            const user = _.find(UserList, {id: Number(id)})
+            return user
+        },
+
+        movies: () => MovieList,
+        movie: (parent, args) => {
+            const title = args.title
+            const movie = _.find(MovieList, {title: title})
+            return movie
+        }
+    },
+    User: {
+        favMovies: () => MovieList.filter((movie) => ( movie.id !== 1 && movie.id !== 2 ))
     }
 
 }

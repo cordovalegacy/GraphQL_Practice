@@ -9,7 +9,7 @@ const server = new ApolloServer({ typeDefs, resolvers })
 
 
 server
-    .listen()
+    .listen() //ApolloServer tells this via the promise what port to listen for
     .then(({ url }) => {
         console.log("Server is up and running on: ", url)
     })

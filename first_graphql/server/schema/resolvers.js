@@ -1,5 +1,5 @@
 const { UserList, MovieList } = require("../utils/dummyData")
-const _ = require("lodash")
+const _ = require("lodash") // lodash allows us to use psuedo model calls like .find
 
 const resolvers = {
 

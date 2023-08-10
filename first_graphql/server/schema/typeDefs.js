@@ -35,6 +35,10 @@ const typeDefs = gql`
         movie(title: String!): Movie! 
     }
 
+    type Mutation {
+        createUser(user: User!): User!
+    }
+
     enum Nationality {
         US
         Hungary

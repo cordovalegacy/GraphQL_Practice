@@ -20,6 +20,28 @@ const resolvers = {
     },
     User: {
         favMovies: () => MovieList.filter((movie) => ( movie.id !== 1 && movie.id !== 2 ))
+    },
+
+    Mutation: {
+        createUser: (parent, args) => {
+            const user = args.input
+            console.log(user)
+            const lastId = UserList[UserList.length-1].id
+            user.id = lastId + 1
+            UserList.push(user)
+            return user
+        },
+        updateEmail: (parent, args) => {
+            const { id, newEmail } = args.input
+            let updatedUser
+            UserList.forEach((user) => {
+                if(user.id === id){
+                    user.email = newEmail
+                    updatedUser = user
+                }
+            })
+            return user
+        }
     }
 
 }

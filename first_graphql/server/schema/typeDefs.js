@@ -8,6 +8,8 @@ const { gql } = require('apollo-server')
 // * getting one requires the type and the "filter"
 // * enum [FieldName] is how to setup required fields
 
+//practice
+
 const typeDefs = gql`
 
     type User {

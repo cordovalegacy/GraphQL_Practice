@@ -96,4 +96,6 @@ const MovieList = [
     }
 ]
 
+//will add more dummy data below
+
 module.exports = { UserList, MovieList }
